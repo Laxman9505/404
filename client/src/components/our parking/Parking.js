@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Parking.css";
 import RoomIcon from "@material-ui/icons/Room";
 import SearchIcon from "@material-ui/icons/Search";
 import ParkingSpot from "../ParkingSpot";
 import Map from "../Map/Map";
+import { useLocation } from "react-router";
+import axios from "axios";
 
 const Parking = () => {
+  function useQuery() {
+    return new URLSearchParams(useLocation().search);
+  }
+  let query = useQuery();
+  const [parkingSpaces, setParkingSpaces] = useState();
+  useEffect(async () => {
+    const response = await axios.get(`/api/parking/${query.get("q")}`);
+    setParkingSpaces(response.data);
+  }, []);
   return (
     <>
       <div className="topbar">
@@ -31,41 +42,21 @@ const Parking = () => {
               Parking Near
             </p>
             <p className="paragraph" style={{ fontWeight: "bold" }}>
-              Baneshowr
+              {query.get("q")}
             </p>
           </div>
-          <ParkingSpot
-            details={{
-              name: "Baneshwor Parking",
-              src: "https://images.unsplash.com/photo-1604063165585-e17e9c3c3f0b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2069&q=80",
-              location: "New Baneshowr,kathmandu",
-              distance: "0.5m away",
-            }}
-          />
-          <ParkingSpot
-            details={{
-              name: "Shankhamul parking",
-              src: "https://images.unsplash.com/photo-1616363088386-31c4a8414858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80",
-              location: "Shankhamul, kathmandu",
-              distance: "1km away",
-            }}
-          />
-          <ParkingSpot
-            details={{
-              name: "Babarmahal Parking",
-              src: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1167&q=80",
-              location: "Babarmahal, kathmandu",
-              distance: "1.5km away",
-            }}
-          />
-          <ParkingSpot
-            details={{
-              name: "mid Baneshowr Parking",
-              src: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1167&q=80",
-              location: "Babarmahal, kathmandu",
-              distance: "1.5km away",
-            }}
-          />
+          {parkingSpaces &&
+            parkingSpaces.map((space) => (
+              <ParkingSpot
+                details={{
+                  name: space.name,
+                  src: "https://images.unsplash.com/photo-1604063165585-e17e9c3c3f0b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2069&q=80",
+                  location: space.name,
+                  carPrice: space.carPrice,
+                  bikePrice: space.bikePrice,
+                }}
+              />
+            ))}
         </div>
         <Map />
       </div>

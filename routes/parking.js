@@ -33,8 +33,6 @@ router.get("/:name", async function (req, res) {
   const result = await Parking.find({
     $or: [{ name: regex }, { location: regex }],
   });
-  res.json({
-    success: result,
-  });
+  res.json(result);
 });
 module.exports = router;

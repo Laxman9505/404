@@ -59,7 +59,7 @@
 }
 .home-content .search-box-container-home input {
   height: 100%;
-  width: 65%;
+  width: 75%;
   font-size: 25px;
   outline: none;
   border: none;
@@ -73,14 +73,14 @@
 .room-icon-home {
   position: absolute;
   color: #ff6666;
-  left: 10px;
+  left: 35px;
   font-size: 25px;
   height: 80px;
   width: 80px;
 }
-.home-content .search-box-container-home .button {
-  height: 100%;
-  width: 35%;
+.button-home {
+  height: 65px;
+  width: 100%;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -88,7 +88,7 @@
   background-color: #1781e2;
   transition: all 0.3s ease;
 }
-.home-content .search-box-container-home .button:hover {
+.home-content .search-box-container-home .button-home:hover {
   background-color: rgba(23, 129, 226, 0.7);
 }
 .home-content .search-box-container-home p {
@@ -130,6 +130,8 @@
   flex-direction: column;
   box-shadow: 0px 6px 6px 5px rgba(0, 0, 0, 0.3);
   background: rgb(245, 243, 243);
+  max-height: 250px;
+  overflow-y: scroll;
 }
 .search-dropdown h1 {
   font-size: 20px;

@@ -8,6 +8,9 @@ import RoomIcon from "@material-ui/icons/Room";
 import SearchIcon from "@material-ui/icons/Search";
 import Footer from "../footer/Footer";
 import axios from "axios";
+import { Redirect } from "react-router";
+
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   const [searchValue, setSearchValue] = useState();
@@ -21,8 +24,8 @@ export const Home = () => {
     const searchTimeout = setTimeout(async () => {
       console.log(searchValue);
       const response = await axios.get(`/api/parking/${searchValue}`, {});
-      console.log(response);
-      setFoundPlaces(response.data.success);
+
+      setFoundPlaces(response.data);
     }, 1000);
     return () => {
       clearTimeout(searchTimeout);
@@ -43,10 +46,17 @@ export const Home = () => {
               type="text"
               placeholder="Search Address,place or event"
               onChange={(e) => setSearchValue(e.target.value)}
+              className="input"
             />
+
             {foundPlaces && (
               <div className="search-dropdown">
-                <h1>Results</h1>
+                {foundPlaces.length > 0 ? (
+                  <h1>Results</h1>
+                ) : (
+                  <h1>No Results</h1>
+                )}
+
                 {foundPlaces.map((place) => (
                   <div className="result">
                     <RoomIcon className="room-icon-dropdown" />
@@ -57,10 +67,12 @@ export const Home = () => {
               </div>
             )}
             <RoomIcon className="room-icon-home" />
-            <div className="button">
-              <p>Find parking</p>
-              <SearchIcon />
-            </div>
+            <Link to={`/parking/?q=${searchValue}`}>
+              <div className="button-home">
+                <p>Find parking</p>
+                <SearchIcon />
+              </div>
+            </Link>
           </div>
           <div className="downloads">
             <img
