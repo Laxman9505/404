@@ -1,0 +1,77 @@
+.topbar {
+  height: auto;
+  width: 100%;
+  background-color: #1b3764;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5rem;
+  padding: 0.5rem;
+}
+.search-box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 65px;
+  position: relative;
+}
+.search-box-container input {
+  height: 80%;
+  width: 60%;
+  font-size: 15px;
+  outline: none;
+  border: none;
+  text-indent: 50px;
+  background: none;
+  border-bottom: 2px solid white;
+  color: white;
+}
+
+.search-box-container input::placeholder {
+  font-size: 1rem;
+  color: white;
+}
+.room-icon {
+  position: absolute;
+  color: orange;
+  left: 7rem;
+  font-size: 25px;
+  height: 40px;
+  width: 40px;
+}
+.search-icon {
+  position: absolute;
+  right: 8rem;
+  color: white;
+  cursor: pointer;
+}
+.arrive {
+  padding: 15px;
+
+  height: 70px;
+  align-self: flex-start;
+}
+
+.arrive p {
+  color: white;
+  margin-top: 0;
+  font-size: 18px;
+}
+.sidebox {
+  width: 45%;
+  height: 585px;
+  overflow: scroll;
+}
+.heading {
+  margin-top: 0.5rem;
+}
+.paragraph {
+  text-align: center;
+  font-size: 1em;
+  font-weight: 580;
+  margin-top: 0 !important;
+}
+.map-and-sidebox-container {
+  display: flex;
+}

@@ -1,0 +1,14 @@
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.error-container img {
+  height: 70%;
+  width: 70%;
+}
+.error-container button {
+  background-color: rgb(10, 141, 32);
+}

@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Bona+Nova:ital@1&display=swap");
+.Quote-container {
+  min-height: 250px;
+  width: 100%;
+  padding: 2rem 15rem;
+}
+.Quote-container .heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 01rem;
+}
+
+.Quote-container .heading span {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: #415765;
+}
+.Quote-container .heading .icon {
+  font-size: 50px;
+  color: #ef4555;
+}
+
+.quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  position: relative;
+}
+.QUOTE {
+  font-family: "Bona Nova", serif;
+  font-size: 18px;
+}
+.NAME {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-top: 0.5rem;
+}
+.left-icon {
+  position: absolute;
+  left: 2rem;
+  color: #2ab7df;
+  cursor: pointer;
+}
+.right-icon {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  cursor: pointer;
+  transform: rotate(180deg);
+  color: #2ab7df;
+}

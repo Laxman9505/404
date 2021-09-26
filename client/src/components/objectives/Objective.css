@@ -1,0 +1,27 @@
+.objective-container {
+  min-height: 100px;
+  width: 100%;
+  background-color: #f4f4f1;
+  padding: 2rem 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.item .content h3 {
+  font-weight: 1500;
+  font-size: 1.1rem;
+  color: #415765;
+}
+.item .content p {
+  font-size: 14px;
+  color: #415765;
+}

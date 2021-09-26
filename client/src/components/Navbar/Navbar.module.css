@@ -1,0 +1,40 @@
+.navigationContainer {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  padding: 15px;
+  padding-top: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.navigationContainer img {
+  height: 70px;
+
+  width: 100px;
+  padding-left: 20px;
+}
+.navLinkContainer {
+  margin-right: 25px;
+}
+.navLinkContainer ul {
+  display: flex;
+}
+.navLinkContainer ul li {
+  margin-right: 50px;
+  background-color: #1781e2;
+  padding: 7px 20px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  color: white;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.navLinkContainer ul li .link {
+  color: white;
+}
+
+.navLinkContainer ul li:hover {
+  transform: scale(1.1);
+}

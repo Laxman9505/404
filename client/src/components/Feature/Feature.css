@@ -1,0 +1,46 @@
+.feature-container {
+  margin-top: 10rem;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.feature-container img {
+  height: 350px;
+  width: 40%;
+}
+.feature-container .content {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.feature-container .content .para-container {
+  margin-top: 1rem;
+}
+.feature-container .content .para-container p {
+  margin-top: 0.5rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: #415765;
+}
+.feature-container .content h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0rem;
+}
+
+.feature-container .content h2 span {
+  font-size: 3rem;
+  font-weight: 2500;
+  color: #415765;
+  text-transform: uppercase;
+}
+.feature-container .content h2 .discover {
+  color: #2ab7df;
+}
+.feature-container .content h2 .amazing {
+  margin-left: 2.2rem;
+}
