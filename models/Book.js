@@ -11,7 +11,18 @@ const BookSchema = new Schema({
     required: true,
   },
   vehicleNo: {
-    type: Number,
+    type: String,
+    required: true,
+  },
+  vehicle: {
+    type: String,
+  },
+  location: {
+    type: String,
+    required: true,
+  },
+  locationId: {
+    type: String,
     required: true,
   },
   arrivalTime: {

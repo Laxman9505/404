@@ -8,7 +8,8 @@ import RoomIcon from "@material-ui/icons/Room";
 import SearchIcon from "@material-ui/icons/Search";
 import Footer from "../footer/Footer";
 import axios from "axios";
-import { Redirect } from "react-router";
+import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router";
 
 import { Link } from "react-router-dom";
 
@@ -16,6 +17,7 @@ export const Home = () => {
   const [searchValue, setSearchValue] = useState();
   const [foundPlaces, setFoundPlaces] = useState();
   const firstRender = useRef(true);
+  const hisotry = useHistory();
   useEffect(() => {
     if (!searchValue || searchValue == "") {
       setFoundPlaces(null);
@@ -31,6 +33,11 @@ export const Home = () => {
       clearTimeout(searchTimeout);
     };
   }, [searchValue]);
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    hisotry.push(`/parking/?q=${searchValue}`);
+  };
   return (
     <>
       <div className="image-container">
@@ -42,12 +49,14 @@ export const Home = () => {
           <h1>Parking just got a lot simpler</h1>
           <p>Book the best spaces and save upto 50%</p>
           <div className="search-box-container-home">
-            <input
-              type="text"
-              placeholder="Search Address,place or event"
-              onChange={(e) => setSearchValue(e.target.value)}
-              className="input"
-            />
+            <form onSubmit={(e) => submitHandler(e)}>
+              <input
+                type="text"
+                placeholder="Search Address,place or event"
+                onChange={(e) => setSearchValue(e.target.value)}
+                className="input"
+              />
+            </form>
 
             {foundPlaces && (
               <div className="search-dropdown">

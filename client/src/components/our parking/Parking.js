@@ -6,17 +6,19 @@ import ParkingSpot from "../ParkingSpot";
 import Map from "../Map/Map";
 import { useLocation } from "react-router";
 import axios from "axios";
+import { getParkings } from "../../actions/parking";
+import { connect } from "react-redux";
 
-const Parking = () => {
+const Parking = ({ getParkings, parkingDetails }) => {
   function useQuery() {
     return new URLSearchParams(useLocation().search);
   }
   let query = useQuery();
-  const [parkingSpaces, setParkingSpaces] = useState();
-  useEffect(async () => {
-    const response = await axios.get(`/api/parking/${query.get("q")}`);
-    setParkingSpaces(response.data);
-  }, []);
+
+  useEffect(() => {
+    console.log(query.get("q"));
+    getParkings(query.get("q"));
+  }, [getParkings]);
   return (
     <>
       <div className="topbar">
@@ -45,10 +47,11 @@ const Parking = () => {
               {query.get("q")}
             </p>
           </div>
-          {parkingSpaces &&
-            parkingSpaces.map((space) => (
+          {parkingDetails &&
+            parkingDetails.map((space) => (
               <ParkingSpot
                 details={{
+                  id: space._id,
                   name: space.name,
                   src: "https://images.unsplash.com/photo-1604063165585-e17e9c3c3f0b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2069&q=80",
                   location: space.name,
@@ -63,5 +66,8 @@ const Parking = () => {
     </>
   );
 };
+const mapStateToProps = (state) => ({
+  parkingDetails: state.parking.parkingDetails,
+});
 
-export default Parking;
+export default connect(mapStateToProps, { getParkings })(Parking);

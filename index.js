@@ -17,6 +17,7 @@ app.use("/api/users", require("./routes/user"));
 app.use("/api/auth", require("./routes/auth"));
 
 app.use("/api/parking", require("./routes/parking"));
+app.use("/api", require("./routes/book"));
 app.listen(PORT, () => {
   console.log("server is listenning");
 });
