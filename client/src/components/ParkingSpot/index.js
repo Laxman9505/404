@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function ParkingSpot(props) {
   const {
-    details: { name, src, location, distance },
+    details: { name, src, location, carPrice, bikePrice },
   } = props;
   return (
     <div className="ParkingSpot">
@@ -13,7 +13,17 @@ export default function ParkingSpot(props) {
       <div className="content-container">
         <p className="heading">{name}</p>
         <small>{location}</small>
-        <p>{distance}</p>
+        <div>
+          <i class="fas fa-car"></i>: {"     "}
+          <small>
+            Rs{"  "} {carPrice}
+          </small>
+        </div>
+        <div>
+          <i class="fas fa-motorcycle"></i>: {"     "}
+          <small>Rs {bikePrice}</small>
+        </div>
+
         <Link to="/book">
           <button type="button">Book now</button>
         </Link>
