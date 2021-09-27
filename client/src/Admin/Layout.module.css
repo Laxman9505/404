@@ -1,0 +1,6 @@
+.Layout {
+  display: flex;
+  width: 100%;
+  height: auto;
+  gap: 1rem;
+}

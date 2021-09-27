@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect } from "react";
 import setAuthToken from "./setAuthToken";
 import { loadUser } from "./actions/auth";
-import Dashboard from "./Admin/Pages/Dashboard";
+import LayoutAdmin from "./Admin/Layout";
 import Layout from "./Layout";
 function App() {
   if (localStorage.getItem("token")) {
@@ -23,7 +23,7 @@ function App() {
       <Provider store={store}>
         <Router>
           <Switch>
-            <Route path="/admin/dashboard" component={Dashboard} />
+            <Route path="/admin/all-parkings" exact component={LayoutAdmin} />
             <Layout />
           </Switch>
         </Router>
