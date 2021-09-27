@@ -1,0 +1,28 @@
+.NavLinks {
+  width: 40%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #4d433b;
+}
+
+.Link {
+  height: 100%;
+  padding: 10px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 1.2vmax;
+  cursor: pointer;
+  padding: 2vw;
+  transition: 0.3s ease;
+}
+
+.Link:hover {
+  transition: 0.3s ease;
+  background: #e2f2fc;
+  color: rgb(94, 53, 177) !important;
+}

@@ -15,7 +15,7 @@ import Book from "./components/Book/Book";
 import { useEffect } from "react";
 import setAuthToken from "./setAuthToken";
 import { loadUser } from "./actions/auth";
-
+import Dashboard from "./Admin/Pages/Dashboard";
 function App() {
   if (localStorage.getItem("token")) {
     setAuthToken(localStorage.getItem("token"));
@@ -36,6 +36,7 @@ function App() {
             <Route path="/signup" component={Signup} />
             <Route path="/parking" component={Parking} />
             <Route path="/book" component={Book} />
+            <Route path="/admin/dashboard" component={Dashboard} />
             <Route path="*" component={Error} />
           </Switch>
         </Router>

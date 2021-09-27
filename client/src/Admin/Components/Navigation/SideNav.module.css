@@ -1,0 +1,34 @@
+.SideNav {
+  width: 20%;
+  height: calc(100vh - 80px);
+  background: #ffffff;
+}
+.NavLinks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: bold;
+  color: #4d433b;
+  padding: 20px;
+}
+.NavLink {
+  width: 100%;
+  border-radius: 20px;
+  list-style: none;
+  padding: 1.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  font-size: 1.2vmax;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+.NavLink:hover {
+  transition: 0.3s ease;
+  background: #e2f2fc;
+  color: rgb(94, 53, 177) !important;
+}
