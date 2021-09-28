@@ -1,13 +1,22 @@
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { Map as LeafletMap, TileLayer, Marker, Popup } from "react-leaflet";
 
 import React from "react";
 import "./Map.css";
 import "leaflet/dist/leaflet.css";
 
+import icon from "leaflet/dist/images/marker-icon.png";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
+import L from "leaflet";
+let DefaultIcon = L.icon({
+  iconUrl: icon,
+  shadowUrl: iconShadow,
+});
+
+L.Marker.prototype.options.icon = DefaultIcon;
 const Map = () => {
   return (
     <div className="map-container">
-      <MapContainer
+      <LeafletMap
         center={[51.505, -0.09]}
         zoom={13}
         scrollWheelZoom={true}
@@ -22,7 +31,7 @@ const Map = () => {
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
         </Marker>
-      </MapContainer>
+      </LeafletMap>
     </div>
   );
 };

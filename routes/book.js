@@ -42,4 +42,8 @@ router.get("/yourparkings", authMiddleware, async (req, res) => {
     res.status(500).json("internal server error");
   }
 });
+router.get("/get-all-books/:id", async function (req, res) {
+  const result = await Book.find({ locationId: req.params.id });
+  res.json(result);
+});
 module.exports = router;

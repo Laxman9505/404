@@ -26,7 +26,6 @@ const Booking = ({ getUserParkings, userParkings }) => {
               </p>
             </div>
           ))}
-        {!userParkings && <h2>You haven't booked any parking slots</h2>}
       </div>
     </div>
   );

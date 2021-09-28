@@ -3,8 +3,10 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import NavLink from "./NavLink";
 import classes from "./SideNav.module.css";
+import { connect } from "react-redux";
+import { logout } from "../../../actions/auth";
 
-function SideNav() {
+function SideNav({ logout }) {
   const history = useHistory();
   return (
     <div className={classes.SideNav}>
@@ -23,22 +25,12 @@ function SideNav() {
         >
           Add a Parking
         </NavLink>
-        <NavLink
-          index={2}
-          className={classes.NavLink}
-          onClick={() => history.push("/admin/all-parkings")}
-        >
-          Earnings
-        </NavLink>
-        <NavLink
-          index={2}
-          className={classes.NavLink}
-          onClick={() => history.push("/admin/all-parkings")}
-        >
-          Settings
+
+        <NavLink index={2} className={classes.NavLink} onClick={() => logout()}>
+          Logout
         </NavLink>
       </ul>
     </div>
   );
 }
-export default SideNav;
+export default connect(null, { logout })(SideNav);

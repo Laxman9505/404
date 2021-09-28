@@ -1,0 +1,21 @@
+.MyParking {
+  width: 100%;
+  padding: 2rem;
+  height: 100vh;
+  overflow-y: scroll;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.heading {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.CardHolder {
+  padding: 1rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
