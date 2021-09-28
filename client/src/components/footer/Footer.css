@@ -34,7 +34,7 @@ li {
 .footer-col ul li:not(:last-child) {
   margin-bottom: 10px;
 }
-.footer-col ul li a {
+.footer-col ul li {
   font-size: 16px;
   text-transform: capitalize;
   color: #ffffff;
@@ -44,7 +44,7 @@ li {
   display: block;
   transition: all 0.3s ease;
 }
-.footer-col ul li a:hover {
+.footer-col ul li:hover {
   color: #ffffff;
   padding-left: 10px;
 }
@@ -60,7 +60,7 @@ li {
   color: #ffffff;
   transition: all 0.5s ease;
 }
-.footer-col .social-links a:hover {
+.footer-col .social-links:hover {
   color: #24262b;
   background-color: #ffffff;
 }

@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./Parking.css";
 import RoomIcon from "@material-ui/icons/Room";
 import SearchIcon from "@material-ui/icons/Search";
 import ParkingSpot from "../ParkingSpot";
 import Map from "../Map/Map";
 import { useLocation } from "react-router";
-import axios from "axios";
 import { getParkings } from "../../actions/parking";
 import { connect } from "react-redux";
 
@@ -18,7 +17,7 @@ const Parking = ({ getParkings, parkingDetails }) => {
   useEffect(() => {
     console.log(query.get("q"));
     getParkings(query.get("q"));
-  }, [getParkings]);
+  }, [getParkings, query]);
   return (
     <>
       <div className="topbar">

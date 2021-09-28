@@ -37,7 +37,7 @@ export default function NewParking() {
   };
   const onSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.post(
+    await axios.post(
       "/api/parking/newparking",
       JSON.stringify({
         name: name,

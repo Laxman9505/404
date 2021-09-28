@@ -4,10 +4,12 @@ import Card from "../Components/Card/Card";
 import classes from "./MyParking.module.css";
 function MyParking() {
   const [allParkings, setAllParkings] = useState();
-  useEffect(async () => {
-    const parkings = await axios.get("/api/parking/allparking");
-    console.log("parkings ", parkings);
-    setAllParkings(parkings.data.parkings);
+  useEffect(() => {
+    async function getParkings() {
+      const parkings = await axios.get("/api/parking/allparking");
+      setAllParkings(parkings.data.parkings);
+    }
+    getParkings();
   }, []);
   return (
     <div className={classes.MyParking}>

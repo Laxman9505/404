@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Logo from "../../Images/404logo.png";
 import styles from "./Navbar.module.css";
 import { connect } from "react-redux";
-import { loadUser, logout } from "../../actions/auth";
+import { logout } from "../../actions/auth";
 const Navbar = ({ isAuthorized, logout }) => {
   const guestLinks = (
     <ul>

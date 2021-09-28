@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Map, TileLayer, Popup, Marker } from "react-leaflet";
+import { Map, TileLayer, Marker } from "react-leaflet";
 import classes from "./Map.module.css";
 const MyMarker = (props) => {
   const initMarker = (ref) => {

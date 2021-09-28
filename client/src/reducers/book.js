@@ -6,7 +6,7 @@ const initialState = {
   userParkings: null,
 };
 
-export default function (state = initialState, action) {
+export default function bookReducer(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
     case GET_USER_PARKINGS:
