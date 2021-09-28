@@ -9,9 +9,7 @@ import Login from "./components/login/Login";
 import Parking from "./components/our parking/Parking";
 import Book from "./components/Book/Book";
 import Booking from "./components/myBooking/Booking";
-import MyParking from "./Admin/Pages/MyParking";
-import NewParking from "./Admin/Pages/NewParking";
-import ParkingDetails from "./Admin/Pages/ParkingDetails";
+
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 export default function Layout() {
