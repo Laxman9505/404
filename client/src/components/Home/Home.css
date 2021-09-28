@@ -19,12 +19,12 @@
   z-index: -4;
   background-color: rgba(0, 0, 0, 0.7);
 }
-.container {
+.container-home {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.home-content {
+.home-content-home {
   width: 60%;
   height: auto;
 
@@ -35,31 +35,31 @@
   color: white;
   margin-top: 5rem;
 }
-.home-content h1 {
+.home-content-home h1 {
   font-size: 2.5rem;
   font-weight: 2000;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.home-content p {
+.home-content-home p {
   margin-top: 0.2rem;
   font-size: 1.5rem;
   font-weight: 500;
   font-family: "Bona Nova", serif;
   color: white;
 }
-.home-content .search-box-container-home {
+.search-box-container-home {
   margin-top: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 70%;
-  height: 65px;
+  height: 90px;
   position: relative;
 }
-.home-content .search-box-container-home form input {
+.input-home {
   height: 100%;
-  width: 75%;
+  width: 100%;
   font-size: 25px;
   outline: none;
   border: none;
@@ -67,20 +67,20 @@
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-.home-content .search-box-container-home form input::placeholder {
+.input-home::placeholder {
   font-size: 16px;
 }
 .room-icon-home {
   position: absolute;
   color: #ff6666;
-  left: 35px;
+  left: 75px;
   font-size: 25px;
   height: 80px;
   width: 80px;
 }
 .button-home {
   height: 65px;
-  width: 100%;
+  width: 30%;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -97,7 +97,7 @@
   font-size: 20px;
   text-transform: uppercase;
 }
-.home-content .downloads {
+.home-content-home .downloads {
   margin-top: 2rem;
   display: flex;
   align-items: center;
@@ -105,7 +105,7 @@
   height: 60px;
   width: 60%;
 }
-.home-content .downloads img {
+.home-content-home .downloads img {
   width: 35%;
   margin-right: 2.5rem;
   cursor: pointer;
@@ -114,10 +114,10 @@
   border-radius: 3px;
   transition: all 0.3s ease;
 }
-.home-content .downloads img:hover {
+.home-content-home .downloads img:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-.home-content .downloads .playstore {
+.home-content-home .downloads .playstore {
   height: 100px;
 }
 

@@ -44,8 +44,8 @@ export const Home = () => {
         <img src={HomeImage} alt="home-img" />
         <div className="overlay"></div>
       </div>
-      <div className="container">
-        <div className="home-content">
+      <div className="container-home">
+        <div className="home-content-home">
           <h1>Parking just got a lot simpler</h1>
           <p>Book the best spaces and save upto 50%</p>
           <div className="search-box-container-home">
@@ -54,7 +54,10 @@ export const Home = () => {
                 type="text"
                 placeholder="Search Address,place or event"
                 onChange={(e) => setSearchValue(e.target.value)}
-                className="input"
+                className="input-home"
+                style={{
+                  height: "65px",
+                }}
               />
             </form>
 
@@ -75,13 +78,22 @@ export const Home = () => {
                 ))}
               </div>
             )}
-            <RoomIcon className="room-icon-home" />
-            <Link to={`/parking/?q=${searchValue}`}>
-              <div className="button-home">
-                <p>Find parking</p>
-                <SearchIcon />
-              </div>
-            </Link>
+
+            <button
+              className="button-home"
+              onClick={() => hisotry.push(`/parking/?q=${searchValue}`)}
+              style={{
+                height: "65px",
+                border: "none",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "0.5rem",
+              }}
+            >
+              <p>Find parking</p>
+              <SearchIcon style={{ color: "white" }} />
+            </button>
           </div>
           <div className="downloads">
             <img

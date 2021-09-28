@@ -15,7 +15,7 @@ function Book({ parkingDetails, getParkings, book }) {
     name: "",
     contact: "",
     vehicleNo: "",
-    vehicle: "bike",
+    vehicle: "",
     location: query.get("name"),
     locationId: query.get("id"),
     arrivalTime: "",
@@ -31,6 +31,7 @@ function Book({ parkingDetails, getParkings, book }) {
   const onChangeBike = (e) => {
     if (e.target.checked) {
       setBikeChecked(true);
+      setFormData({ ...formData, vehicle: "bike" });
     } else {
       setBikeChecked(false);
       setFormData({ ...formData, vehicle: "" });
@@ -39,6 +40,7 @@ function Book({ parkingDetails, getParkings, book }) {
   const onChangeCar = (e) => {
     if (e.target.checked) {
       setCarChecked(true);
+      setFormData({ ...formData, vehicle: "car" });
     } else {
       setCarChecked(false);
     }
@@ -50,6 +52,15 @@ function Book({ parkingDetails, getParkings, book }) {
   const submitHandler = (e) => {
     e.preventDefault();
     book(formData);
+    setFormData({
+      name: "",
+      contact: "",
+      vehicleNo: "",
+      vehicle: "bike",
+      location: query.get("name"),
+      locationId: query.get("id"),
+      arrivalTime: "",
+    });
   };
 
   return (
@@ -102,19 +113,21 @@ function Book({ parkingDetails, getParkings, book }) {
             <input type="checkbox" onChange={(e) => onChangeCar(e)} />
             <i className="fas fa-car"></i>
           </div>
-          <div className="price">
-            <p>
-              Total Price:{" "}
-              {bikeChecked ? "Rs " + parkingDetails[0].bikePrice : <></>}
-              {carChecked ? "Rs " + parkingDetails[0].carPrice : <></>}
-              {bikeChecked && carChecked ? (
-                "Rs " +
-                (parkingDetails[0].bikePrice + parkingDetails[0].carPrice)
-              ) : (
-                <></>
-              )}
-            </p>
-          </div>
+          {vehicle && (
+            <div className="price">
+              <p>
+                Total Price:{" "}
+                {bikeChecked ? "Rs " + parkingDetails[0].bikePrice : <></>}
+                {carChecked ? "Rs " + parkingDetails[0].carPrice : <></>}
+                {bikeChecked && carChecked ? (
+                  "Rs " +
+                  (parkingDetails[0].bikePrice + parkingDetails[0].carPrice)
+                ) : (
+                  <></>
+                )}
+              </p>
+            </div>
+          )}
         </div>
         <div className="your-information">
           <h1>Your Information</h1>
@@ -128,10 +141,7 @@ function Book({ parkingDetails, getParkings, book }) {
                 onChange={(e) => onChange(e)}
               />
             </div>
-            <div className="form-group">
-              <label htmlFor="">Email:</label>
-              <input type="text" />
-            </div>
+
             <div className="form-group">
               <label htmlFor="">phone Number:</label>
               <input
