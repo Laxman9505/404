@@ -8,3 +8,4 @@ export const LOGOUT = "LOGOUT";
 export const BOOK_SUCCESS = "BOOK_SUCCESS";
 export const BOOK_FAIL = "BOOK_FAIL";
 export const GET_PARKING = "GET_PARKING";
+export const GET_USER_PARKINGS = "GET_USER_PARKINGS";

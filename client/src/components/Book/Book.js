@@ -6,7 +6,8 @@ import { book } from "../../actions/book";
 import { connect } from "react-redux";
 import { getParkings } from "../../actions/parking";
 import RoomIcon from "@material-ui/icons/Room";
-function Book({ parkingDetails, getParkings, book }) {
+import { getUserParkings } from "../../actions/book";
+function Book({ parkingDetails, getParkings, book, getUserParkings }) {
   const history = useHistory();
   function useQuery() {
     return new URLSearchParams(useLocation().search);
@@ -44,7 +45,7 @@ function Book({ parkingDetails, getParkings, book }) {
       arrivalTime: "",
     });
   };
-  console.log(vehicle);
+
   return (
     <>
       <div className="book-container">
@@ -178,4 +179,6 @@ function Book({ parkingDetails, getParkings, book }) {
 const mapStateToProps = (state) => ({
   parkingDetails: state.parking.parkingDetails,
 });
-export default connect(mapStateToProps, { getParkings, book })(Book);
+export default connect(mapStateToProps, { getParkings, book, getUserParkings })(
+  Book
+);

@@ -21,6 +21,8 @@ router.post(
         error: errors.array(),
       });
     } else {
+      req.body.user = req.user;
+
       const book = await new Book(req.body);
       await book.save();
       return res.json({
@@ -30,4 +32,14 @@ router.post(
   }
 );
 
+router.get("/yourparkings", authMiddleware, async (req, res) => {
+  try {
+    const parkings = await Book.find({ user: req.user });
+
+    res.json({ parkings: parkings });
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json("internal server error");
+  }
+});
 module.exports = router;

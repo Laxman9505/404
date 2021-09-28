@@ -23,6 +23,7 @@ export default function Layout() {
         <Route path="/signup" component={Signup} />
         <Route path="/parking" component={Parking} />
         <Route path="/book" component={Book} />
+        <Route path="/mybookings" component={Booking} />
         <Route path="*" component={Error} />
       </Switch>
     </Router>

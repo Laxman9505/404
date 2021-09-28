@@ -24,6 +24,11 @@ const Navbar = ({ isAuthorized, logout }) => {
           Logout
         </Button>
       </li>
+      <li>
+        <Link className={styles.link} to="/mybookings">
+          My parkings
+        </Link>
+      </li>
     </ul>
   );
   return (
