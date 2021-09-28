@@ -36,12 +36,19 @@ function Book({ parkingDetails, getParkings, book }) {
       setBikeChecked(false);
       setFormData({ ...formData, vehicle: "" });
     }
+    if (bikeChecked && carChecked) {
+      setBikeChecked(false);
+    }
   };
   const onChangeCar = (e) => {
     if (e.target.checked) {
       setCarChecked(true);
       setFormData({ ...formData, vehicle: "car" });
     } else {
+      setCarChecked(false);
+      setFormData({ ...formData, vehicle: "" });
+    }
+    if (bikeChecked && carChecked) {
       setCarChecked(false);
     }
   };
@@ -56,7 +63,7 @@ function Book({ parkingDetails, getParkings, book }) {
       name: "",
       contact: "",
       vehicleNo: "",
-      vehicle: "bike",
+      vehicle: "",
       location: query.get("name"),
       locationId: query.get("id"),
       arrivalTime: "",
