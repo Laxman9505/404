@@ -1,5 +1,5 @@
 import "./Signup.css";
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 
 import { Link, Redirect } from "react-router-dom";
 import { register } from "../../actions/auth";

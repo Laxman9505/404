@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { Link, Redirect } from "react-router-dom";
 import loginOverlay from "../../Images/loginnew.jpg";
@@ -6,7 +6,6 @@ import EmailIcon from "@material-ui/icons/Email";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import { connect } from "react-redux";
 import { login } from "../../actions/auth";
-
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({

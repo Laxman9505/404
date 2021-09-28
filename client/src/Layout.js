@@ -12,7 +12,6 @@ import Booking from "./components/myBooking/Booking";
 import MyParking from "./Admin/Pages/MyParking";
 import NewParking from "./Admin/Pages/NewParking";
 import ParkingDetails from "./Admin/Pages/ParkingDetails";
-import SideNav from "./Admin/Components/Navigation/SideNav";
 export default function Layout() {
   const navbar = <Navbar />;
 

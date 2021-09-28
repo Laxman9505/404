@@ -1,13 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router";
-import { useHistory } from "react-router";
 import "./Book.css";
 import { book } from "../../actions/book";
 import { connect } from "react-redux";
 import { getParkings } from "../../actions/parking";
 import RoomIcon from "@material-ui/icons/Room";
 function Book({ parkingDetails, getParkings, book }) {
-  const history = useHistory();
   function useQuery() {
     return new URLSearchParams(useLocation().search);
   }
@@ -25,7 +23,7 @@ function Book({ parkingDetails, getParkings, book }) {
 
   useEffect(() => {
     getParkings(query.get("name"));
-  }, [getParkings]);
+  }, [getParkings, query]);
   const { name, contact, vehicleNo, vehicle, arrivalTime } = formData;
 
   const onChange = (e) => {
@@ -122,8 +120,8 @@ function Book({ parkingDetails, getParkings, book }) {
           {vehicle && (
             <div className="price">
               <p>
-                price: Rs {vehicle == "car" && "100"}
-                {vehicle == "bike" && "50"}
+                price: Rs {vehicle === "car" && "100"}
+                {vehicle === "bike" && "50"}
               </p>
             </div>
           )}

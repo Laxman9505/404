@@ -3,8 +3,7 @@ const initialState = {
   bookingDetails: null,
 };
 
-export default function (state = initialState, action) {
-  const { type, payload } = action;
+export default function bookReducer(state = initialState, action) {
   return {
     ...state,
   };

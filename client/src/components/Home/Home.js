@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
 import { Feature } from "../Feature/Feature";
 import { Objective } from "../objectives/Objective";
@@ -8,18 +8,14 @@ import RoomIcon from "@material-ui/icons/Room";
 import SearchIcon from "@material-ui/icons/Search";
 import Footer from "../footer/Footer";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router";
-
-import { Link } from "react-router-dom";
 
 export const Home = () => {
   const [searchValue, setSearchValue] = useState();
   const [foundPlaces, setFoundPlaces] = useState();
-  const firstRender = useRef(true);
   const hisotry = useHistory();
   useEffect(() => {
-    if (!searchValue || searchValue == "") {
+    if (!searchValue || searchValue === "") {
       setFoundPlaces(null);
       return;
     }

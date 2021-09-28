@@ -12,7 +12,7 @@ export const Feature = () => {
   return (
     <>
       <div className="feature-container" data-aos="fade-down">
-        <img src={navigationImg} alt="navigation image" />
+        <img src={navigationImg} alt="navigation" />
         <div className="content">
           <h2>
             <span className="discover">Discover</span>
@@ -46,13 +46,13 @@ export const Feature = () => {
         </div>
         <img
           src={payImg}
-          alt="navigation image"
+          alt="navigation"
           style={{ width: "20%" }}
           data-aos="fade-right"
         />
       </div>
       <div className="feature-container" style={{ marginTop: "0rem" }}>
-        <img src={carImg} alt="navigation image" data-aos="fade-right" />
+        <img src={carImg} alt="navigation" data-aos="fade-right" />
         <div className="content" data-aos="fade-down">
           <h2>
             <span className="discover">Drive</span>

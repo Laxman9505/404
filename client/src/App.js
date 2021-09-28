@@ -4,14 +4,13 @@ import { Provider } from "react-redux";
 
 import { ToastContainer } from "react-toastify";
 
-import { BrowserRouter as Router, Switch, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import { useEffect } from "react";
 import setAuthToken from "./setAuthToken";
 import { loadUser } from "./actions/auth";
 import LayoutAdmin from "./Admin/Layout";
 import Layout from "./Layout";
-import SideNav from "./Admin/Components/Navigation/SideNav";
 
 function App() {
   const location = useLocation();
@@ -22,7 +21,7 @@ function App() {
     store.dispatch(loadUser());
   }, []);
   let layout = <Layout />;
-  if (location.pathname.split("/")[1] == "admin") {
+  if (location.pathname.split("/")[1] === "admin") {
     layout = <LayoutAdmin />;
   } else {
     layout = <Layout />;

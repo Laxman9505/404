@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const Error = () => {
   return (
     <div className="error-container">
-      <img src="https://i.stack.imgur.com/6M513.png" alt="404 image" />
+      <img src="https://i.stack.imgur.com/6M513.png" alt="404" />
       <Link to="/">
         <Button>Back to Home</Button>
       </Link>

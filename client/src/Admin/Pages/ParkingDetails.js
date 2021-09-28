@@ -10,22 +10,25 @@ function ParkingDetails() {
   }
   let query = useQuery();
   const id = query.get("id");
-  useEffect(async () => {
-    try {
-      const results = await axios.get("/api/get-all-books/" + id);
-      const array = [];
-      results.data.forEach((result) => {
-        array.push({ id: result._id, ...result });
-      });
-      setstate(array);
-    } catch (error) {
-      console.log(error);
+  useEffect(() => {
+    async function getResult() {
+      try {
+        const results = await axios.get("/api/get-all-books/" + id);
+        const array = [];
+        results.data.forEach((result) => {
+          array.push({ id: result._id, ...result });
+        });
+        setstate(array);
+      } catch (error) {
+        console.log(error);
+      }
     }
-  }, [axios]);
+    getResult();
+  }, [id]);
   return (
     <div className={classes.ParkingDetails}>
       <h2 className={classes.Heading}>Parking Details</h2>
-      {state.length != 0 ? (
+      {state.length !== 0 ? (
         <Table data={state} />
       ) : (
         <p>No Bookings in this Area</p>
