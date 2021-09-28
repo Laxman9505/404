@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BOOK_SUCCESS } from "./types";
+import { BOOK_SUCCESS, BOOK_FAIL, GET_USER_PARKINGS } from "./types";
 import { alert } from "../components/alert/alert";
 
 export const book = (formData) => async (dispatch) => {

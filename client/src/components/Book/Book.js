@@ -5,13 +5,8 @@ import { book } from "../../actions/book";
 import { connect } from "react-redux";
 import { getParkings } from "../../actions/parking";
 import RoomIcon from "@material-ui/icons/Room";
-<<<<<<< HEAD
 import { getUserParkings } from "../../actions/book";
 function Book({ parkingDetails, getParkings, book, getUserParkings }) {
-  const history = useHistory();
-=======
-function Book({ parkingDetails, getParkings, book }) {
->>>>>>> 95eb65efeab19e4eb29c4cf24fe016474a5b72b0
   function useQuery() {
     return new URLSearchParams(useLocation().search);
   }

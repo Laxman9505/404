@@ -18,6 +18,7 @@ export default function Layout() {
             exact
             component={NewParking}
           />
+          <PrivateRoute path="/admin/" exact component={MyParking} />
           <PrivateRoute
             path="/admin/all-parkings"
             exact
