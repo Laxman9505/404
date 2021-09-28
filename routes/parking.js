@@ -28,6 +28,12 @@ router.post("/newparking", async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+router.get("/allparking", async function (req, res) {
+  const parkings = await Parking.find();
+  res.json({
+    parkings,
+  });
+});
 router.get("/:name", async function (req, res) {
   let regex = new RegExp(req.params.name, "i");
   const result = await Parking.find({
