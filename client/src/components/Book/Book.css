@@ -41,17 +41,18 @@
   color: #2ab7df;
 }
 .price {
-  border: 2px solid black;
   align-self: flex-end;
   margin-left: 4rem;
   justify-self: center;
+  border-radius: 10px;
 }
 .price p {
   font-weight: 600;
   position: absolute;
-  bottom: 1rem;
+  bottom: -1rem;
   right: 2rem;
   font-size: 1.3rem;
+  border-radius: 10px;
 
   padding: 2rem;
   background: rgb(235, 231, 231);
