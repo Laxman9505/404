@@ -11,6 +11,7 @@ import setAuthToken from "./setAuthToken";
 import { loadUser } from "./actions/auth";
 import LayoutAdmin from "./Admin/Layout";
 import Layout from "./Layout";
+
 function App() {
   if (localStorage.getItem("token")) {
     setAuthToken(localStorage.getItem("token"));

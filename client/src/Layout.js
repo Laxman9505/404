@@ -9,10 +9,12 @@ import Signup from "./components/Signup/Signup";
 import Login from "./components/login/Login";
 import Parking from "./components/our parking/Parking";
 import Book from "./components/Book/Book";
+import Booking from "./components/myBooking/Booking";
 export default function Layout() {
   return (
     <Router>
       <Navbar />
+      <Route path="/bookings" component={Booking} />
 
       <Switch>
         <Route exact path="/" component={Home} />
