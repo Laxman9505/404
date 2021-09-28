@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const Parking = require("../models/Parkingareas");
-
 router.post("/newparking", async (req, res) => {
   const {
     name,
@@ -41,4 +40,5 @@ router.get("/:name", async function (req, res) {
   });
   res.json(result);
 });
+
 module.exports = router;

@@ -42,5 +42,5 @@
     "not dead",
     "not op_mini all"
   ],
-  "proxy": "http://localhost:3456"
+  "proxy": "http://localhost:3456/"
 }

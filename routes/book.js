@@ -29,5 +29,8 @@ router.post(
     }
   }
 );
-
+router.get("/get-all-books/:id", async function (req, res) {
+  const result = await Book.find({ locationId: req.params.id });
+  res.json(result);
+});
 module.exports = router;

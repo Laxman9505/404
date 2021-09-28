@@ -15,7 +15,12 @@ function MyParking() {
       <div className={classes.CardHolder}>
         {allParkings &&
           allParkings.map((parking) => (
-            <Card heading={parking.name} subHeading={parking.location} />
+            <Card
+              key={parking._id}
+              heading={parking.name}
+              id={parking._id}
+              subHeading={parking.location}
+            />
           ))}
       </div>
     </div>

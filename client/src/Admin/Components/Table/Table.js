@@ -2,36 +2,42 @@ import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 
 const columns = [
-  { field: "id", headerName: "ID", width: 90 },
   {
-    field: "firstName",
-    headerName: "First name",
+    field: "name",
+    headerName: "Full Name",
     width: 150,
     editable: true,
   },
   {
-    field: "lastName",
-    headerName: "Last name",
-    width: 150,
+    field: "location",
+    headerName: "Location",
+    width: 200,
     editable: true,
   },
   {
-    field: "age",
-    headerName: "Age",
-    type: "number",
-    width: 110,
+    field: "contact",
+    headerName: "Contact Number",
+    width: 200,
     editable: true,
   },
   {
-    field: "fullName",
-    headerName: "Full name",
-    description: "This column has a value getter and is not sortable.",
-    sortable: false,
+    field: "vehicle",
+    headerName: "Vehicle",
+    sortable: true,
     width: 160,
-    valueGetter: (params) =>
-      `${params.getValue(params.id, "firstName") || ""} ${
-        params.getValue(params.id, "lastName") || ""
-      }`,
+  },
+
+  {
+    field: "vehicleNo",
+    headerName: "Vehicle Number",
+    sortable: true,
+    width: 200,
+  },
+  {
+    field: "arrivalTime",
+    headerName: "Arrival Time",
+    sortable: true,
+    width: 200,
   },
 ];
 
@@ -47,11 +53,11 @@ const rows = [
   { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
 ];
 
-export default function DataGridDemo() {
+export default function DataGridDemo({ data }) {
   return (
     <div style={{ height: 400, width: "100%" }}>
       <DataGrid
-        rows={rows}
+        rows={data}
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}

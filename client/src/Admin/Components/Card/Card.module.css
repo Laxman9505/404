@@ -9,6 +9,7 @@
   align-items: flex-start;
   justify-content: space-around;
   padding: 1rem;
+  cursor: pointer;
   color: rgb(37, 36, 36);
 }
 
